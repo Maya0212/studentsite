@@ -1,3 +1,33 @@
-body {
+body {font-family: Helvetica, Arial, sans-serif;
     background-color: pink;
+    margin: 0;
+    display: grid;
+    align-content: center;
+    min-height: 100vh;
 }
+
+h1 {
+    font-size: 48px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+p{
+    color: white;
+    max-width: 30em;
+    margin: 0 auto;
+}
+
+ul {
+    margin: 0 auto;
+    padding: 0;
+}
+
+a{
+    color: white;
+}
+
