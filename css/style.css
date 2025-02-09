@@ -57,10 +57,40 @@ main {
     background: rgba(0,0,0,.05);
 }
 
+section {
+    padding: 3em 1em;
+}
+
 /* FOOTER */
 footer {
     border-top: 1px solid rgba(0,0,0,.05);
     padding: 1em;
+}
+
+/* LAYOUT */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .two-col-sidebar {
+        display: grid;
+        grid-template-columns: 20em auto;
+    }
+
+    .two-col-sidebar aside  {
+        border-right: 1px solid rgba(0,0,0,.1);
+    }
+}
+
+
+aside {
+    padding: 0em 1em;
+}
+
+.primary {
+    padding: 0 1em;
 }
 
 /* SOCIAL NAV */
@@ -112,4 +142,50 @@ footer {
 
 .courses h3 {
     text-align: center;
+}
+
+/* STYLING FOR SUB PAGES */
+.page-sub .hero {
+    background-color: rgba(0,0,0,.1);
+    color: rgba(0,0,0,8)
+}
+
+/* COURSE WORK SECTION */
+.coursework {
+    padding: 6em 1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.projects {
+    margin: 2em;
+}
+
+/* CODE BLOCKS */
+pre code {
+    width: 100%;
+    display: block;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 1em 3em;
+    margin-bottom: 1em;
+    line-height: 1.5;
+  }
+
+.markup-box {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 1em 3em;
+    margin-bottom: 1em;
+}
+
+/* DEFINITION LISTS */
+dt {
+    font-weight: bold;
+    margin-top: 1em;
+}
+dd {
+    margin: 0;
 }
