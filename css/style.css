@@ -16,7 +16,7 @@ body {
 
 /* HEADER */
 header{
-    background-color: rgba(0, 102, 204, 1);
+    background-color: rgba(164, 100, 36, 0.551);
     color: rgba(0, 0, 0, 0.8);
     padding: 1em;
     display: grid;
@@ -144,10 +144,23 @@ aside {
     text-align: center;
 }
 
-/* STYLING FOR SUB PAGES */
+/* CUSTOM STYLING FOR SPECIFIC & SUB PAGES */
 .page-sub .hero {
     background-color: rgba(0,0,0,.1);
     color: rgba(0,0,0,8)
+}
+
+.page-home .hero{
+    background-image: url('../img/Flower.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20vh 1em 20vh 1em;
+}
+
+.page-home header {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
 }
 
 /* COURSE WORK SECTION */
