@@ -14,6 +14,12 @@ body {
     line-height: 1.4;
 }
 
+/* RESPONSIVE IMAGES */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* HEADER */
 header{
     background-color: rgba(164, 100, 36, 0.551);
