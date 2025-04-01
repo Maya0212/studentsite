@@ -181,6 +181,11 @@ aside {
     margin: 2em;
 }
 
+.projects a {
+    display: flex;
+    line-height: 1.4;
+}
+
 /* CODE BLOCKS */
 pre code {
     width: 100%;
@@ -208,3 +213,4 @@ dt {
 dd {
     margin: 0;
 }
+
