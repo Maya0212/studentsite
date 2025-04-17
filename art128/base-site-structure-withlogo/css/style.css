@@ -109,6 +109,12 @@ a :hover {
     margin-right: auto;
 }
 
+.visually-hidden {
+    position: absolute;
+    top: -9999px;
+    left: -9999;
+}
+
 /* IMAGES */
 img {
     max-width: 100%;

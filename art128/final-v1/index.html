@@ -12,7 +12,10 @@
     <meta name="keywords" content="Web design, web development, ux, ui, frontend web development, html, css, javascript.">
 
     <!-- FOR RESPONSIVE DESIGN -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <!-- ADOBE FONT -->
+    <link rel="stylesheet" href="https://use.typekit.net/rmr7sgp.css">
 
     <!-- MAIN CSS FILE -->
      <link rel="stylesheet" href="css/style.css">
@@ -33,7 +36,7 @@
                     <li><a class="scroll" href="#about">About</a></li>
                     <li><a class="scroll" href="#events">Events</a></li>
                     <li><a class="scroll" href="#gallery">Gallery</a></li>
-                    <li><a class="scroll" href="#location">Location</a></li>
+                    <li><a class="scroll" href="#about">Location</a></li>
                     <li><a class="scroll" href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -48,14 +51,14 @@
             <div class="container">
                  
                 <h1>Chidori-ga-fuchi</h1>
-                <h1>Cherry Blossom</h1>
+                <h2>Cherry Blossom</h2>
             
-                <p>This is the hero section on the top of a single page sub site.</p>
-                <P>
-                    <a href="#about" class="button scroll">Learn More About Us</a>
+                <h3>2 chome Kudan Minami, Chiyoda City, Tokyo</h3>
+                <p>
+                    <a href="#about" class="button scroll">Learn More</a>
                     <a href="#contact" class="button alt scroll">Get in Touch</a>
                     
-                </P>
+                </p>
              </div>
              <!-- END CONTAINER -->
         </section>
@@ -138,31 +141,80 @@
     </main>
     </section>
 
-    
-
-    <section id="contact">
+    <section id="gallery">
         <div class="container">
 
-            <h3 class="section-title">Contact Us</h3>
+            <h3 class="section-title">Gallery</h3>
 
-            <form>
-                <label for="contact-name">Name:</label>
-                <input type="text" id="contact_name" name="contact_mame" />
-
-                <label for="email">Email Address:</label>
-                <input type="text" id="contact_email" name="contact_email" />
-
-                <label for="contact-message">Messge:</label>
-                <textarea id="contact_Message" name="contact_message"></textarea>
-
-                <input type="submit" value="Submit" />
-
-            </form>
+            <div class="row">
+                <div class="column one-half centered">
+                    <img src="img/cherryblossom-river.jpg" alt="Square 1x1 Placeholder Image" width="500" height="500">
+                </div>
+            </div>
             
         </div>
     </section>
 
-<footer site class="site-footer">
+    
+
+    <section id="contact">
+        <div class="container">
+            <h3 class="section-title">Contact Us</h3>
+
+            <div class="row">
+
+                <div class="column">
+                    <h4>Contact Information</h4>
+                    <p> ADRESS : 6100 Center Dr, Suite 925, Los Angeles, CA 90045</p>
+                    <p>TEL : +1 (82) 4414-0212</p>
+                    <P>E-MAIL : infolax@jnto.go.jp</P>
+                    <p>BUSINESS HOURS : Monday - Friday: 9:00am - 5:00pm PST (Closed 1 hour for lunch) Closed on major holidays and Dec. 29 - Jan. 3.</p>
+                    <p>VISITER POLICY : We are not currently accepting walk-in appointments or reservations from the general public. If you have any inquiries, please contact us at infolax@jnto.go.jp. You may also visit our information center at Japan House Los Angeles (weekends only). We greatly appreciate your understanding.</p>
+                </div>
+                    
+                <div class="column">
+                    
+                    <form>
+                        <label for="contact-name">Name:</label>
+                        <input type="text" id="contact_name" name="contact_mame" />
+
+                        <label for="email">Email Address:</label>
+                        <input type="text" id="contact_email" name="contact_email" />
+
+                        <label for="contact-message">Messge:</label>
+                        <textarea id="contact_Message" name="contact_message"></textarea>
+
+                        <input type="submit" value="Submit" />
+
+                    </form>
+                </div>
+            </div>   
+        </div>
+    </section>
+
+<footer site class="site-footer ">
+    <div class="row">
+        <div class="one-thirds column">
+            <h4>NEED HELP?</h4>
+            <P>About Us</P>
+            <P> Contact Us</P>
+            <P>Privacy & Cookie Policy</P>
+            <P>Terms & Conditions</P>
+        </div>
+
+        <div class="one-thirds column">
+            <h4>EXPLORE</h4>
+            <P>Japan Map</P>
+            <p>Wether</p>
+            <p>Events</p>
+        </div>
+
+        <div class="one-thirds column">
+            <h4>Follow Us</h4>
+            <p>@Chidori_ga_fuchi_Sakura</p>
+        </div>
+    </div>
+
     <div class="container">
         <nav class="site-nav">
             <ul>
