@@ -209,7 +209,7 @@ body { margin: 0;}
 @media (min-width: 1250px) {
     body {
         font-size: 112.5%; /* 18px */
-    }    bbb
+    }    
     .container {
             max-width: 1200px;
     }
@@ -452,9 +452,18 @@ section {
 .hero h2 {
     padding-bottom: 3em;
 }
+
 .hero h3 {
     font-size: 1.2em;
+    width: 500px;
+    color: #000;
 }
+  
+h3>span {
+    background-color: rgb(255, 255, 255);
+    opacity: 70%;
+}
+  
 .hero p {
     font-size: 0.8em;
 }
