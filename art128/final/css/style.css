@@ -437,12 +437,13 @@ section {
 /* HERO */
 
 .hero {
-    padding: 3em 4%;
+    padding: 3em 4% 30vw 4%;
     background-color: rgba(221, 16, 16, 0.1);
     color: #fff;
-    background-image: url(../img/sakura&boat-copy.jpg);
+    background-image: url(../img/sakura-boat-square.jpg);
     background-size: cover;
-    background-position: 80% 42%;
+    background-position: 50% 98%;
+    /* aspect-ratio: 1.8 / 1; */
 }
 
 .hero h1 {
@@ -450,18 +451,13 @@ section {
 }
 
 .hero h2 {
-    padding-bottom: 3em;
+    /* padding-bottom: 3em; */
 }
 
 .hero h3 {
     font-size: 1.2em;
     width: 500px;
-    color: #000;
-}
-  
-h3>span {
-    background-color: rgb(255, 255, 255);
-    opacity: 70%;
+    color: rgba(255, 255, 255, 0.8);
 }
   
 .hero p {
@@ -671,8 +667,20 @@ article {
     background-position: center top; 
   }
 
+
   /* GALLERY SECTION STYLE */
   #gallery {
     margin-bottom: 6em;
+  }
+
+  #gallery .swiper-slide {
+    /* width: 700px; */
+    height: 360px;
+  }  
+  
+  #gallery .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
