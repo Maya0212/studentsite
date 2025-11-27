@@ -1,0 +1,1004 @@
+/* --------------------
+
+TABLE OF CONTENTS 
+
+# GLOBALS
+    # DEFINE GLOBAL VARIABLES (CUSTOM PROPERTIES)
+    # SET GLOBAL COLORS
+    # SET GLOBAL TYPOGRAPHY
+    # GLOBAL MEDIA (images, video, svg)
+    # GLOBAL HELPERS
+    # GLOBAL RESETS
+        # ENABLE SMOOTH SCROLLING
+
+# LAYOUT
+    # CONTAINER
+    # GRID SYSTEM (12 column)
+
+# SITE STRUCTURE
+    # HEADER
+        #LOGO
+        #SITE NAV
+    # MAIN
+        # SECTIONS
+    # FOOTER
+
+# UI COMPONENTS
+    # Button
+    # CARDS
+    # HR (HORIZONTAL RULE)
+    # CODE BLOCKS
+    # SWIPER SLIDER (CAROUSEL)
+
+    (WE WILL ADD MORE HERE)
+
+# CUSTOM SITE STYLING (OPINIONATED)
+    # BODY GRID LAYOUT SYSTEM (header, main, and footer)
+    # HEADER ON TOP OF HERO
+    # CUSTOM HERO STYLING
+    # CUSTOM PAGE LAYOUT - 2 COLUMNS: ASIDE + MAIN CONTENT
+    # STICKYBOX
+    # NMA TYPE BLOCK
+
+# ANIMATION
+    #REGULAR ON PAGE LOAD ANIMATION
+    # SCROLL-TRIGGERED ANIMATIONS
+----------------------- */
+
+/* ------------------
+        GLOBALS 
+--------------------- */
+
+/* DEFINE GLOBAL VARIABLES */
+:root {
+
+    /* DEFINE BASE COLORS */
+    --color-white: #fff;
+    --color-black: #000;
+    --color-black-80: rgb(0 0 0 / .8);
+
+    --color-grey-100: rgb(0 0 0 / .05);
+    --color-grey-200: rgb(0 0 0 / .2);
+
+    --color-blue-100: #dbeafe;
+    --color-blue-400: #3b82f6;
+    --color-blue-800: #3644a8;
+    --color-blue-900: #1e40af;
+
+    --color-green-100: #d1fae5;
+    --color-green-200: #a0f2be;
+    --color-green-400: #22c55e;
+    --color-green-600: #0E9B42;
+    --color-green-800: #166534;
+    --color-green-900: #004419;
+    --color-green: #DDE7A8;
+
+    /* DEFINE SEMANTIC COLORS */
+    --color-body-background: #F5F3EC;
+    --color-body-text: var(--color-black-80);
+    --color-body-text-dark: var(--color-black);
+
+    --color-primary: var(--color-blue-400);
+    --color-primary-dark: var(--color-blue-900);
+    --color-secondary: var(--color-green-400);
+
+    /* ACTION COLORS */
+    --color-links: #fff;
+    --color-links-hover: var(--color-green-400);
+    --color-links-light: var(--color-green-200);
+
+    --color-siteheader-background: transparent;
+    --color-sitefooter-background: transparent;
+    --color-hero-background: var(--color-blue-100);
+
+     /* SECTION SPECIFIC */
+    --color-siteheader-background: transparent;
+    --color-siteheader-links: var(--color-blue-300);
+    --color-siteheader-links-hover: var(--color-blue-900);
+    --color-sitefooter-background: var(--color-grey-100);
+    --color-hero-background: var(--color-blue-100);
+
+    /* BORDERS */
+    --color-border: var(--color-grey-200);
+    --border-radius: 5px;
+    --border-thickness: .5px;
+
+    /* SIZING UNITS */
+    --unit-2xs: 0.25rem;
+    --unit-xs: 0.5rem;
+    --unit-s: 1rem;
+    --unit-m: 1.5rem;
+    --unit-l: 2rem;
+    --unit-xl: 3rem;
+    --unit-2xl: 4rem;
+    --unit-3xl: 6rem;
+    --container-width: 1100px;
+
+    /* GLOBAL FONTS */
+    --font-body: "Molengo", system-ui, Helvetica, arial, sans-serif;
+    --font-headings: "Libre Caslon Display", Georgia, Times, "Times New Roman", serif;
+
+}
+
+/* SET GLOBAL COLORS */
+body {
+    background-color: var(--color-body-background);
+    color: var(--color-body-text);
+}
+
+/* HEADINGS */
+h1, h2, h3 {
+    color: var(--color-body-text-dark);
+
+    /* ADD SUPPORT FOR TEXTWRAP BALANCE */
+    text-wrap: balance;
+}
+
+h1 {
+    font-size: clamp(2.5em, 4vw, 4em);
+    margin-block: 0;
+    overflow-wrap: break-word;
+}
+
+/* LIMIT THE NUMBER OF CHARACTERS PER LINE FOR ALL PARAGRAPHS */
+p {
+    max-inline-size: 66ch;
+}
+
+/* REMOVE WIDOWS FOR ALL PARAGRAPHS AND LIST ITEMS*/
+p, li { 
+    text-wrap: pretty;
+}
+
+/* LINKS */
+a {
+    color: var(--color-links);
+
+    /* STYLE THE UNDERLINE */
+    text-decoration-color: var(--color-links-light);
+    text-underline-offset: .135em;
+    text-decoration-thickness: .1em;
+}
+
+a:hover {
+    color: var(--color-primary-hover);
+}
+
+/* GLOBAL TYPOHRAPHY */
+body {
+    font-family: var(--font-body);
+    font-size: 100%;
+    line-height: 1.4;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-headings);
+}
+
+h1 {
+    font-family: "Kaushan Script", cursive;
+    font-size: 1.7em;
+}
+
+/* GLOBAL MEDIA */
+
+/* IMAGES (Responsive)
+   Responsive on small screens
+   Do not stretch too large (beyond the orignal)
+   on large screens */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* GLOBAL HELPERS */
+
+.text-centered {
+    text-align: center;
+}
+
+.vertical-text {
+  transform: rotate(90deg); /* 90度回転 */
+  top: 50%;    /* 上下中央あたりに */
+}
+
+
+/* CENTER PARAGRAPHS INSIDE CENTERED PARENTS */
+.text-centered p {
+    margin-inline: auto;
+}
+
+/* HIDE CONTENT VISUALLY (BUT KEEP FOR SEO AND ACCESSIBILITY) */
+.hide-visually,
+.visually-hidden,
+.screen-reader-only {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+/* GLOBAL RESETS */
+
+/* Remove the default 8pm margin on body */
+body {  margin: 0; }
+
+/* Set all elements to box sizing border box */
+* { box-sizing: border-box; }
+
+/* SMOOTH SCROLLING */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ADD OFFSET TO ALL INLINE ANCHOR LINKS */
+:target {
+    scroll-margin-top: var(--unit-m);
+}
+
+
+/* ------------------
+        LAYOUT 
+--------------------- */
+
+/* CONTAINER */
+
+.container {
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: var(--unit-s);
+}
+
+
+/* GRID SYSTEM (12 column) */
+
+.row {
+    --grid-gap: var(--unit-s);
+}
+
+.row > * {
+    margin-block-end: var(--grid-gap);
+}
+
+/* NEW width SYNTAX (updated from min-width: 768px)  */
+@media ( width >= 768px ) {
+   
+    .row {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--grid-gap);
+    }
+
+    /* COMMONLY USED SEMANTIC COLUMNS */
+    .one-whole { grid-column: auto / span 12; }
+    .one-half { grid-column: auto / span 6; }
+    .one-third { grid-column: auto / span 4; }
+    .two-thirds { grid-column: auto / span 8; }
+    .one-fourth { grid-column: auto / span 3; }
+    .three-fourths { grid-column: auto / span 9; }
+
+    /* SWAP (REVERSE COLUMNS) - WORKS ONLY w/ 2 COLUMNS */
+    .row.swapped > *:first-child { order: 2; }
+    .row.swapped > *:last-child { order: 1; }
+
+    /* CENTERED COLUMNS */
+    .one-half.centered { grid-column-start: 4;}
+    .two-thirds.centered { grid-column-start: 3;}
+
+    /* 12 COLUMN CLASS-BASED GRID SYSTEM */
+    .col-1 { grid-column: auto / span 1; }
+    .col-2 { grid-column: auto / span 2; }
+    .col-3 { grid-column: auto / span 3; }
+    .col-4 { grid-column: auto / span 4; }
+    .col-5 { grid-column: auto / span 5; }
+    .col-6 { grid-column: auto / span 6; }
+    .col-7 { grid-column: auto / span 7; }
+    .col-8 { grid-column: auto / span 8; }
+    .col-9 { grid-column: auto / span 9; }
+    .col-10 { grid-column: auto / span 10; }    
+    .col-11 { grid-column: auto / span 11; }   
+    .col-12 { grid-column: auto / span 12; } 
+    
+    /* PUSHES */
+    .push-1 { grid-column-start: 2; }
+    .push-2 { grid-column-start: 3; }
+    .push-3 { grid-column-start: 4; }
+    .push-4 { grid-column-start: 5; }
+    .push-5 { grid-column-start: 6; }
+    .push-6 { grid-column-start: 7; }
+    .push-7 { grid-column-start: 8; }
+    .push-8 { grid-column-start: 9; }
+    .push-9 { grid-column-start: 10; }
+    .push-10 { grid-column-start: 11; } 
+    .push-11 { grid-column-start: 12; }           
+}
+
+.one-third {
+  display: flex;           /* 横並びにする */
+  justify-content: center; /* 中央寄せ（オプション） */
+  align-items: center;     /* 縦位置をそろえる（オプション） */
+  gap: 5px;               /* 画像の間にすき間を入れる */
+}
+
+.one-third img {
+  width: 33%;              /* 3等分にしたい場合 */
+  height: auto;            /* 比率を保つ */
+  justify-content: center;
+}
+
+.one-half {
+  width: 50%;
+  position: relative; /* 内部の絶対配置に必要 */
+  text-align: left;   /* 左寄せ */
+}
+
+/* FOR DEMO PURPOSES ONLY */
+.row.demo > * {
+    background-color: #F5F3EC;
+    text-align: center;
+    padding: var(--unit-s);
+}
+
+/* ------------------
+    SITE STRUCTURE 
+--------------------- */
+
+/* SITE HEADER */
+.site-header {
+    background-color: var(--color-siteheader-background);
+    padding-block: var(--unit-s);
+    padding-inline: var(--unit-s);
+
+    /* DISPLAY LOGO ON LEFT AND NAV ON RIGHT */
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    gap: var(--unit-s);
+    flex-wrap: wrap;
+}
+
+/* REMOVE HEADER PADDING IF IT HAS A CONTAINER */
+.site-header:has(.container) {
+    padding-inline: 0;
+}
+
+/* LOGO STYLING */
+.site-header .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--unit-s);
+}
+
+.site-header .logo svg {
+    max-height: 50px;
+    min-width: 50px;
+}
+
+/* CHRS COYIER'S FIX FOR GAP UNDR INLINE IMAGES AND SVG*/
+.site-header .logo img,
+.site-header .logo svg {
+    vertical-align: middle;
+}
+
+.site-header .logo h1 {
+    font-size: 1.3125rem;
+    margin: 0;
+}
+
+.site-header .logo a {
+    text-decoration: none;
+}
+
+/* MAIN SITE NAV */
+.site-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: var(--unit-s);
+    flex-wrap: wrap;
+}
+
+.site-nav a {
+    color: var(--color-siteheader-links);
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: var(--unit-xs);
+    padding-block-start: calc(var(--unit-xs) + .1em);
+}
+
+.site-nav a:hover {
+    color: var(--color-siteheader-links-hover);
+}
+
+/* SHOW MENU BUTTON ON HIGHER LAYER WHEN IS OPEN */
+.site-nav .menubutton {
+    position: relative;
+    z-index: 100;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    padding: var(--unit-xs);
+    margin-block-start: var(--unit-xs);
+    background-color: transparent;
+}
+
+
+/* SMALL SCREEN: SHOW MENU BUTTON, HIDE NAV */
+.site-nav .menubutton { display: block; }
+.site-nav ul { display: none; }
+
+/* BIG SCREEN: SHOW MENU BUTTON< HIDE NAV */
+@media ( width >= 768px ) {
+    .site-nav .menubutton { display: none; }
+    .site-nav ul { display: flex; }
+}
+
+/* SMALL SCREEN ONLY: ENABLE OVERLAY NAV */
+@media ( width < 768px ) {
+
+    .site-nav[data-menustate] ul {
+        display: grid;
+        position: fixed;
+        justify-content: center;
+        align-content: center;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: red;
+        transition: translate 0.3s ease-out;
+    }
+
+    .site-nav[data-menustate] a {
+        color: var(--color-white);
+    }
+
+    .site-nav[data-menustate="open"] ul {
+        translate: 0 0;
+    }
+
+    .site-nav[data-menustate="closed"] ul {
+        translate: 100% 0;
+    }
+
+    /* ENABLE SVG ANIMATION FOR THE NAVICON */
+    .site-nav[data-menustate] .simple-navicon rect {
+        transition: all .3s ease-out;
+        fill: var(--color-primary);
+    }
+
+    /* CHANGE COLOR OF THE SVG NAVICON WHEN MENU IS OPEN */
+    .site-nav[data-menustate="open"] svg.simple-navicon rect {
+        fill: var(--color-white);
+    }
+
+    /* ANIMATE NAVICON LINES TO AN X WHEN OPEN */
+    .site-nav .simple-navicon {
+        display: block;
+    }
+    .site-nav .simple-navicon rect {
+        transform-origin: center;
+        width: 100%;
+    }
+    .site-nav[data-menustate="open"] .simple-navicon-top {
+        position: fixed;
+        top: calc(var(--unit-s) + var(--unit-s));
+        right: calc(var(--unit-s) + var(--unit-xs));
+    }
+    .site-nav[data-menustate="open"] .simple-navicon-top {
+        rotate: 45deg;
+        translate: -21% 24%;
+    }
+    .site-nav[data-menustate="open"] .simple-navicon-middle {
+        opacity: 0;
+    }
+    .site-nav[data-menustate="open"] .simple-navicon-bottom {
+        rotate: -45deg;
+        translate: -21% -24%;
+    }
+
+}
+
+
+/* SITE MAIN */
+.site-main {
+    background-color: transparent;
+}
+
+/* STYLING FOR ALL SECTIONS */
+section {
+    padding-block: var(--unit-2xl);
+}
+
+.hero {
+    background-color: var(--color-hero-background);
+    padding-block: var(--unit-3xl);
+    padding-inline: var(--unit-s);
+    background-image: url(../img/top-page.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    
+    h1 {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+    h2 {
+    font-family: "Long Cang", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--unit-2xl);    
+    }
+    
+    h3 {
+    opacity: 80;
+    }
+    
+    h1, h2, h3 {
+        color: #fff;
+    }
+}
+
+.hero:has(.container) {
+    padding-inline: 0;
+}
+
+
+/* SITE FOOTER */
+.site-footer {
+  position: relative;
+  width: 100%;
+  display: inline-block; /* 中身の高さに合わせる */
+}
+
+.footer-bg {
+  width: 100%;
+  height: auto;       /* 画像の縦横比を保つ */
+  display: block;
+}
+
+.footer-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+
+/* REMOVE FOOTER PADDING IF IT HAS A CONTAINER */
+.site-footer:has(.container) {
+    padding-inline: 0;
+}
+
+/* ------------------
+    UI COMPONENTS 
+--------------------- */
+
+/* BOTTONS */
+
+.button {
+    background-color: var(--color-links);
+    color: var(--color-black-80);
+    padding: var(--unit-s) var(--unit-m);
+    margin-block: var(--unit-2xs);
+    display: inline-block;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    line-height: 1;
+}
+.button:hover {
+    background-color: var(--color-links-hover);
+    color: var(--color-white)
+}
+
+.site-footer .button {
+    padding: 13px;
+}
+
+/* CARDS */
+
+.card {
+    border: var(--border-thickness) solid var(--color-border);
+    display: inline-block;
+    padding: var(--unit-s);
+    border-radius: var(--border-radius);
+}
+
+.color-swatch {
+    --_swatch-color: grey;
+    background-color: var(--_swatch-color);
+    width: 150px;
+    height: 150px;
+}
+
+/* HR */
+hr {
+    border: none;
+    border-bottom: var(--border-thickness) solid var(--color-border);
+    margin: var(--unit-xl) 0;
+}
+
+/* Code Blocks */
+pre:has(code) {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding-inline: var(--unit-m);
+    border-radius: var(--border-radius);
+    white-space: pre-wrap;
+}
+
+/* SWIPER CSS STYLING */
+
+.swiper {
+    padding-block-end: 2rem;
+    /* margin-inline: 4rem; */
+    text-align: center;
+}
+.swiper-wrapper {
+}
+
+/* MOVE SWIDER ARROWS OYRSIDE OF SWIPER */
+.swiper-button-prev, 
+.swiper-button-next {
+    background-color: var(--color-white);
+    padding: var(--unit-xs);
+    border-radius: 100%;
+}
+
+.swiper-button-prev {
+    /* translate: -50% 0 */
+}
+
+.swiper-button-next {  
+    /* translate: 50% 0; */
+}
+
+/* ------------------
+    CUSTOM SITE STYLING 
+--------------------- */
+
+/* PUSH THE FOOTER TO THE BOTTOM BY DEFAULT */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100svh;
+}
+
+/* TO FIX OVERFLOW WORD BREAK */
+body > * {
+    min-width: 0;
+}
+
+/* NUDGE THE NAV ITEMS DOWN TO ALIGN WITH IMAGE LOGO TEXT */
+.site-header .site-nav a {
+    padding-block-start: calc(var(--unit-xs) + .35em);
+}
+
+/* RENDER HEADER ON TOP OF HERO */
+.site-header.on-top-of-hero {
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid red;
+}
+
+.site-header.on-top-of-hero + .site-main .hero {
+    padding-block-start: calc(var(--unit-3xl) + var(--unit-xl));
+}
+
+/* CUSTOM HERO STYLING */
+
+.hero p {
+    text-wrap: balance;
+}
+
+/* CUSTOM PAGE LAYOUT - 2 COLUMNS: ASIDE + MAIN CONTENT */
+
+@media ( width >= 768px ) {
+
+    .pagelayout-wrapper-twocolumn {
+        display: flex;
+        gap: var(--unit-l);
+    }
+
+    .pagesection-aside {
+        width: 25%;
+    }
+
+    .pagesection-maincontent {
+        width: 75%;
+    }
+
+}
+
+/* STICKYBOX */
+/* NOTE NEEDED ON SMALL SCREENS< SO IT IS INSIDE OF A MEDIA QUERY SO IT ALLLOWS THE OBERLAY MENU TO RENDER ON TOP SMALL SCREENS */
+.stickybox {
+    position: sticky;
+    top: var(--unit-m);
+}
+
+/* NMA TYPE BLOCK */
+
+.zen-eyebrow {
+    font-size: .875rem;
+    font-weight: bold; 
+    text-transform: var(--unit-xs);
+    opacity: .5;
+    line-height: 1;
+}
+
+.zen-headline {
+    font-size: 3rem;
+    margin-block: var(--unit-xs);
+    line-height: 1.1;
+}
+
+.zen-subheadline {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-block: var(--unit-xs);
+    opacity: .7;
+    line-height: 1.2;
+}
+
+/* ------------
+     ANIMATIONS
+    ------------- */
+
+/* REGULAR ON PAGE LOAD ANIMATIONS */
+
+.scale-and-fade-in {
+    animation-name: slide-from-top-and-fade-in;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0,.5,.5,1);
+    animation-fill-mode: forwards;
+    opacity: 0;
+    translate: 0 -40px;
+}
+
+@keyframes slide-from-top-and-fade-in {
+    0% {
+        opacity: 0;
+        translate: 0 -40px;
+    }
+    100% {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+.slide-from-left-and-fade-in {
+    animation-name: slide-from-left-and-fade-in;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0,1,0,1);
+    animation-fill-mode: forwards;
+    opacity: 0;
+    translate: -20px 0;
+}
+
+@keyframes slide-from-left-and-fade-in {
+    0% {
+        opacity: 0;
+        translate: -20px 0;
+    }
+    100% {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+.delay-0 { animation-delay: 0s; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0,5s; }
+.delay-5 { animation-delay: 0,7s; }
+.delay-6 { animation-delay: 0,9s; }
+
+/* SCROLL-TRIGGERED ANIMATION */
+
+/* FIX SCROLL BAR ON ALL SCROLL ANIMATION SECTIONS */
+section:has(.observe-me)  {
+    overflow-x: clip;
+}
+
+/* on scroll slide-in for the left */
+.observe-me.onscroll-slide-in-from-left {
+
+    /* Simple way */
+    opacity: 0;
+    translate: -20px 0;
+    transition: all .5s ease-out .2s;
+
+    /* --duration: .5s;
+    --delay: .2s;
+    opacity: 0;
+    translate: -20px 0;
+    transition: 
+        translate var(--duration).5s ease-out .2s(--delay),
+        opacity var(duration).5s linear .2s(--delay); */
+
+}
+.observe-me[data-viewstate="active"].onscroll-slide-in-from-left {
+ opacity: 1;
+ translate: 0 0;
+}
+
+/* on scroll slide-in for the right */
+.observe-me.onscroll-slide-in-from-right {
+
+    /* Simple way */
+    opacity: 0;
+    translate: 20px 0;
+    transition: all .5s ease-out .2s;
+}
+.observe-me[data-viewstate="active"].onscroll-slide-in-from-right {
+ opacity: 1;
+ translate: 0 0;
+}
+
+.observe-me.delay-0 { transition-delay: 0s; }
+.observe-me.delay-1 { transition-delay: 0.1s; }
+.observe-me.delay-2 { transition-delay: 0.2s; }
+.observe-me.delay-3 { transition-delay: 0.3s; }
+.observe-me.delay-4 { transition-delay: 0.5s; }
+.observe-me.delay-5 { transition-delay: 0.7s; }
+.observe-me.delay-6 { transition-delay: 0.9s; }
+
+
+/* SPEECH BUBBLE */
+.speech-bubble {
+    /* メインの吹き出しのスタイル */
+    position: relative; /* 疑似要素の基準位置 */
+    width: 300px;
+    padding: 20px;
+    border-radius: 60px; /* 角丸 */
+    background-color: var(--color-green); /* 白い背景 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影 */
+    /* テキストのはみ出し防止 */
+    word-wrap: break-word;
+    line-height: 1.5;
+    /* この例の位置は固定値です。配置したい場所に合わせて調整してください */
+    margin: 50px 0 0 50px; 
+}
+
+.speech-bubble.top-right {
+margin-left: auto;   /* 左側のマージンを自動的に最大まで広げる */
+    margin-right: 0;
+}
+
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    /* 親要素と同じサイズと位置に設定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 角丸も親要素と同じに設定 */
+    border-radius: inherit; 
+    
+    /* 背景を透明にし、境界線のみ表示 */
+    background: transparent;
+    border: 2px solid #814D22; /* 境界線のスタイルと色 */
+    
+    /* 背面に配置 */
+    z-index:  1;
+    
+    /* ここで位置をずらす（オフセット） */
+    top: 5px;
+    left: 5px; 
+}
+
+/* 画面の幅が600px以下になったら縦並びにする（ブレークポイントの設定） */
+@media (max-width: 600px) {
+    .speech-bubble {
+        flex-direction: column; /* 方向を縦（列）に変更する */
+    }
+
+    
+}
+
+/* DIAMOND HEAD */
+#tea-bar-zen {
+  position: relative; /* 子要素をabsoluteで動かすために必要 */
+}
+
+#tea-bar-zen .vertical-text {
+  position: absolute;
+  left: 0;      /* 左端に寄せる */
+  transform-origin: left bottom; /* 回転の基準点を調整 */
+  color: var(--color-white);
+}
+
+/* MENU */
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* 画像の間に余白 */
+}
+
+.one-third {
+  position: relative;
+  width: 33.3%;
+  overflow: hidden;
+}
+
+.hover-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.5s ease;
+}
+
+/* JSで切り替えやフェードをサポートするのでここではopacityのみ指定 */
+
+/* HOW YOU CAN FIND US */
+
+#how-you-can-find-us {
+  position: relative;
+  background: url("../img/how-you-can-find-us.png") no-repeat center center/cover;
+  color: white;
+  padding: 60px 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  min-height: 400px; /* 背景を確認できるように高さを確保 */
+}
+
+#how-you-can-find-us .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+#how-you-can-find-us::before {
+  /* 背景画像の上に少し暗いフィルターをかける（文字が読みやすくなる） */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.overlay-content {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  position: relative;
+  z-index: 2; /* 背景より上に出す */
+  padding: 20px;
+}
+
+.one-half {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.text-block h1,
+.text-block h2 {
+  margin-bottom: 10px;
+}
+
+.text-block p {
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.map-block img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+
