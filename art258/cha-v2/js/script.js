@@ -44,5 +44,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // HOVER IMAGE
 
+const clouds = document.querySelectorAll('.cloud');
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+
+  clouds.forEach((cloud, i) => {
+    // 雲ごとにタイミングをずらす
+    let offset = scrollY - i * 200;
+    let scale = 1 + offset * 0.0015;
+    let opacity = Math.max(0, 0.5 - offset * 0.0008);
+    cloud.style.transform = `scale(${scale})`;
+    cloud.style.opacity = opacity;
+  });
+});
+
+
 
 

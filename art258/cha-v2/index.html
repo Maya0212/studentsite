@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Libre+Caslon+Display&family=Long+Cang&family=Molengo&display=swap" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -25,18 +26,11 @@
     <header class="site-header on-top-of-hero">
         
         <div class="logo slide-from-top-and-fade-in delay-4">
-
-            <!-- INLINE SVG LOGO EXAMPLE -->
             
-            <a href="index.html">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-                    <circle cx="250" cy="250" r="250" style="fill:#3b82f6"/>
-                </svg>
-                <span class="visually-hidden">Cha to Gelato Zen Logo</span>
-            </a>
+            
 
             <!-- INLINE IMG LOGO EXAMPLE -->
-             <!-- <a href="index.html"><img src="img/logo.png" alt="Simple Base Logo" width="200" height="50"></a> -->
+             <a href="index.html"><img src="img/logo-with-text-white.png" alt="Simple Base Logo" width="132" height="85"></a>
 
             <h1 class="hide-visually"><a href="index.html">Cha to Gelato Zen</a></h1>
 
@@ -54,8 +48,10 @@
             <ul>
                 <li class="slide-from-top-and-fade-in delay-5"><img href="index.html"></img></li>
                 <li class="slide-from-top-and-fade-in delay-6"><a href="styleguide.html">Menu</a></li>
-                <li class="slide-from-top-and-fade-in delay-6"><a href="styleguide.html">About</a></li>
+                <li class="slide-from-top-and-fade-in delay-6"><a href="#about">About</a></li>
                 <li class="slide-from-top-and-fade-in delay-6"><a href="styleguide.html">Contact</a></li>
+            </ul>
+            <ul>
                 <li class="slide-from-top-and-fade-in delay-6"><a href="styleguide.html">Location&Hours</a></li>
                 <li class="slide-from-top-and-fade-in delay-6"><a href="styleguide.html">reservation</a></li>
             </ul>
@@ -74,142 +70,165 @@
                 <p class="slide-from-top-and-fade-in delay-2">We provide Japanese quality hospitality</p>
         </section>
 
-        <section id="menu">
-            <div class="container">
+        <section id="menu-to-reservation">
+            <!-- 雲を入れるコンテナ -->
+            <div class="clouds-container">
+                <div class="cloud" style="background-image:url('img/cloud-1.png')"></div>
+                <div class="cloud" style="background-image:url('img/cloud-2.png')"></div>
+                <div class="cloud" style="background-image:url('img/cloud-3.png')"></div>
+            </div>
 
-                <div class="row">
-                    <div class="one-third">
-                        <img class="hover-image" src="img/bar-menu.png" data-hover="img/bar-menu-hover.png" alt="bar menu" width="2000" height="1000">
+            <section id="menu">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="one-third">
+                            <div class="hover-image bar-menu">
+                                <img src="img/new-bar-menu.png" alt="bar menu" width="500" height="500">
+                                <h2>Bar Menu</h2>
+                            </div>
+                        </div>
+
+                        <div class="one-third">
+                            <div class="hover-image macha-menu">
+                                <img src="img/new-cha-menu.png" alt="macha menu" width="500" height="500">
+                                <h2>Cha Menu</h2>
+                            </div>
+                        </div>
+
+                            <div class="one-third">
+                                <div class="hover-image gelato-menu">
+                                    <img src="img/new-gelato-menu-images.png" alt="gelato menu" width="500" height="500">
+                                    <h2>Gelato Menu</h2>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <section class="text-centered">
+                            <a href="#features" class="button scale-and-fade-in">See Full Menu</a>
+                        </section>
+
+                </div>
+            </section>
+
+            <section id="about">
+                <div class="container">
+
+                    <div class="row swapped">
+                        <div class="one-half">
+                            <h2>"100% Organic Japanese Green Tea"</h2>
+                            <img src="img/about-us.jpg" alt="Placeholder image" width="2000" height="1000">
+                        </div>
+                        <div class="one-half">          
+                            <h2 class="vertical-text">From<br>
+                                Farm To Zen</h2>
+                            <p>We has been opened our cafe & bar "然 zen."on April 5th, 2024.We specialize in organic Japanese tea/matcha & Japanese style Gelato.<br>
+                            <br>
+                            Our tea leaf are all single-origin tea leaves sourced directly from Japanese tea farms. We provide Japanese quality hospitality (Omotenashi) .<br>
+                            <br>
+                            Please enjoy our products and service.</p>
+                        </div>
                     </div>
 
-                    <div class="one-third">
-                        <img class="hover-image" src="img/cha-menu.png" data-hover="img/cha-menu-hover.png" alt="macha menu" width="2000" height="1000">
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <div class="speech-bubble top-left">
+                        <!-- テキストコンテンツと矢印（疑似要素で作成）が入ります -->
+                        <p>I am living in Kapahulu and I loves matcha. She heard there is a new match cafe, so she came here. The worker is friendly and the price is affordable. She fell in love with the cafe as soon as she entered.</p>
+                        <div class="author">Mala</div>
+                    </div>
+                    
+                    <div class="speech-bubble top-right">
+                        <!-- テキストコンテンツ -->
+                        <p>He visited Hawaii with his family and his friend recommended this cafe. They wanted to get dessert after dinner and almost all the cafes were already closed. However, this cafe was open until late, and he enjoyed eating gelato in a relaxed atmosphere.</p>
+                        <div class="author">Kento</div>
                     </div>
 
-                    <div class="one-third">
-                        <img class="hover-image" src="img/gelato-menu.png" data-hover="img/gelato-menu-hover.png" alt="gelato menu" width="2000" height="1000">
+                    <div class="speech-bubble bottom-left">
+                        <!-- テキストコンテンツ -->
+                        <p>She is living in Hawaii, and she loves Japanese sake. She has a daily routine of drinking sake after dinner with her husband. She was looking for a bar which serves Nihonshu and she is starting to like this bar.</p>
+                        <div class="author">Mia</div>
                     </div>
                 </div>
+            </section>
 
+            <section id="tea-bar-zen">
+                <div class="container">
+                    
+                    <img src="img/tea-bar-zen.png" alt="bar" width="100" height="100">
+                    <h2 class="vertical-text overlay-text">Tea Bar<br>Zen</h2>
+                    <p>Thursday<br>
+                        6:00pm - 12:00am<br>
+                        Friday & Saturday<br>
+                        1:00pm - 2:00am<br>
+                        Reservation only<br>
+                    </p>
+                </div>
+            </section>
 
-                <section class="text-centered">
-                    <a href="#features" class="button scale-and-fade-in">See Full Menu</a>
-                </section>
-
-            </div>
         </section>
 
-        <section>
+        <section id="how-you-can-find-us">
             <div class="container">
+                <div class="overlay-content">
+                    <div class="one-half text-left">
+                        <h2>How You Can Find Us?</h2>
 
-                <div class="row swapped">
-                    <div class="one-half">
-                        <h2>"100% Organic Japanese Green Tea"</h2>
-                        <img src="img/about-us.jpg" alt="Placeholder image" width="2000" height="1000">
+                        <h1>Cafe</h1>
+                        <p>
+                        Tuesday - Sunday<br>
+                        12:00pm - 5:00pm<br>
+                        6:00pm - 10:00pm<br>
+                        No Reservations
+                        </p>
+
+                        <h1>Bar</h1>
+                        <p>
+                        Thursday<br>
+                        6:00pm - 12:00am<br>
+                        Friday & Saturday<br>
+                        11:00pm - 2:00am<br>
+                        Reservations only
+                        </p>
                     </div>
-                    <div class="one-half">          
-                        <h2 class="vertical-text">From<br>Farm<br>to<br>Zen</h2>
-                        <p>We has been opened our cafe & bar "然 zen."on April 5th, 2024.We specialize in organic Japanese tea/matcha & Japanese style Gelato.<br>
-                        <br>
-                        Our tea leaf are all single-origin tea leaves sourced directly from Japanese tea farms. We provide Japanese quality hospitality (Omotenashi) .<br>
-                        <br>
-                        Please enjoy our products and service.</p>
+
+                    <div class="one-half image-right">
+                        <img src="img/zen-map.png" alt="map">
                     </div>
                 </div>
-
             </div>
         </section>
-
-        <section>
-            <div class="container">
-                <div class="speech-bubble top-left">
-                    <!-- テキストコンテンツと矢印（疑似要素で作成）が入ります -->
-                    <p>I am living in Kapahulu and I loves matcha. She heard there is a new match cafe, so she came here. The worker is friendly and the price is affordable. She fell in love with the cafe as soon as she entered.</p>
-                    <div class="author">Mala</div>
-                </div>
-                
-                <div class="speech-bubble top-right">
-                    <!-- テキストコンテンツ -->
-                    <p>He visited Hawaii with his family and his friend recommended this cafe. They wanted to get dessert after dinner and almost all the cafes were already closed. However, this cafe was open until late, and he enjoyed eating gelato in a relaxed atmosphere.</p>
-                    <div class="author">Kento</div>
-                </div>
-
-                <div class="speech-bubble bottom-left">
-                    <!-- テキストコンテンツ -->
-                    <p>She is living in Hawaii, and she loves Japanese sake. She has a daily routine of drinking sake after dinner with her husband. She was looking for a bar which serves Nihonshu and she is starting to like this bar.</p>
-                    <div class="author">Mia</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="tea-bar-zen">
-            <div class="container">
-                <img src="img/diamond-head.png" alt="tea bar zen">
-                <img src="img/tea-bar-zen.png" alt="bar" width="100" height="100">
-                <h2 class="vertical-text overlay-text">Tea Bar<br>Zen</h2>
-                <p>Thursday<br>
-                    6:00pm - 12:00am<br>
-                    Friday & Saturday<br>
-                    11:00pm - 2:00am<br>
-                    Reservation only<br>
-                </p>
-            </div>
-        </section>
-
-
-       <section id="how-you-can-find-us">
-  <div class="container">
-    <div class="overlay-content">
-        
-      <div class="one-half text-block">
-        <h2>How You Can Find Us?</h2>
-
-        <h1>Cafe</h1>
-        <p>
-          Tuesday - Sunday<br>
-          12:00pm - 5:00pm<br>
-          6:00pm - 10:00pm<br>
-          No Reservations
-        </p>
-
-        <h1>Bar</h1>
-        <p>
-          Thursday<br>
-          6:00pm - 12:00am<br>
-          Friday & Saturday<br>
-          11:00pm - 2:00am<br>
-          Reservations only
-        </p>
-      </div>
-
-      <div class="one-half map-block">
-        <img src="img/zen-map.png" alt="map">
-      </div>
-    </div>
-  </div>
-</section>
 
         
         
     </main>
 
-    <footer class="site-footer">
-            <img src="img/footer-img.png" alt="footer background" class="footer-bg">
-        <div class="footer-content">
-            <h2>About Simple Base</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <nav>
-                        <ul>
-                            <li><a href="index.html" class="button scale-and-fade-in">Home</a></li>
-                            <li><a href="menu.html" class="button scale-and-fade-in">Menu</a></li>
-                            <li><a href="about.html" class="button scale-and-fade-in">About</a></li>
-                            <li><a href="contact.html" class="button scale-and-fade-in">Contact</a></li>
-                            <li><a href="location&hours.html" class="button scale-and-fade-in">Location & Hours</a></li>
-                            <li><a href="reservation.html" class="button scale-and-fade-in">Reservation</a></li>
-
-                        </ul>
-            </nav>
-                    
+    <footer>
+        <div class="footer-background-container">
+            <img src="img/footer.png" alt="footer background" class="footer-bg">
+        <div class="footer-content">                   
+            <!-- <a href="index.html" class="button scale-and-fade-in">
+                <img src="img/reservation-botton.png" alt="reservation">
+            </a> -->
+            <a href="menu.html" class="button scale-and-fade-in">
+                <img src="img/menu-botton.png" alt="menu">
+            </a>
+            <a href="about.html" class="button scale-and-fade-in">
+                <img src="img/about-botton.png" alt="about">
+            </a>
+            <a href="contact.html" class="button scale-and-fade-in">
+                <img src="img/contact-botton.png" alt="contact">
+            </a>
+            <a href="location&hours.html" class="button scale-and-fade-in">
+                <img src="img/location-botton.png" alt="location">
+            </a>
+            <a href="reservation.html" class="button scale-and-fade-in">
+                <img src="img/reservation-botton.png" alt="reservation">
+            </a>             
         </div>
 
     </footer>

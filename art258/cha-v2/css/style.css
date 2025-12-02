@@ -54,6 +54,7 @@ TABLE OF CONTENTS
 
     /* DEFINE BASE COLORS */
     --color-white: #fff;
+    --color-white-80: rgb(255 255 255 / .8);
     --color-black: #000;
     --color-black-80: rgb(0 0 0 / .8);
 
@@ -93,8 +94,8 @@ TABLE OF CONTENTS
 
      /* SECTION SPECIFIC */
     --color-siteheader-background: transparent;
-    --color-siteheader-links: var(--color-blue-300);
-    --color-siteheader-links-hover: var(--color-blue-900);
+    --color-siteheader-links: var(--color-white-80);
+    --color-siteheader-links-hover: var(--color-white);
     --color-sitefooter-background: var(--color-grey-100);
     --color-hero-background: var(--color-blue-100);
 
@@ -112,11 +113,13 @@ TABLE OF CONTENTS
     --unit-xl: 3rem;
     --unit-2xl: 4rem;
     --unit-3xl: 6rem;
+    --unit-4xl: 9rem;
     --container-width: 1100px;
 
     /* GLOBAL FONTS */
     --font-body: "Molengo", system-ui, Helvetica, arial, sans-serif;
     --font-headings: "Libre Caslon Display", Georgia, Times, "Times New Roman", serif;
+    /* --font-caslon-text: "Libre Caslon Text"; */
 
 }
 
@@ -197,10 +200,12 @@ img {
     text-align: center;
 }
 
-.vertical-text {
-  transform: rotate(90deg); /* 90度回転 */
-  top: 50%;    /* 上下中央あたりに */
-}
+/* 90度回転 */
+ /* 上下中央あたりに */
+/* .vertical-text {
+  transform: rotate(90deg); 
+  top: 50%;   
+} */
 
 
 /* CENTER PARAGRAPHS INSIDE CENTERED PARENTS */
@@ -312,18 +317,25 @@ html {
     .push-11 { grid-column-start: 12; }           
 }
 
-.one-third {
-  display: flex;           /* 横並びにする */
-  justify-content: center; /* 中央寄せ（オプション） */
-  align-items: center;     /* 縦位置をそろえる（オプション） */
-  gap: 5px;               /* 画像の間にすき間を入れる */
-}
+/* 横並びにする */
+/* 横並びにする */
+/* 中央寄せ（オプション） */
+/* 縦位置をそろえる（オプション） */
+/* 画像の間にすき間を入れる */
+/* .one-third {
+  display: flex;           
+  justify-content: center; 
+  align-items: center;     
+  gap: 5px;               
+} */
 
-.one-third img {
-  width: 33%;              /* 3等分にしたい場合 */
-  height: auto;            /* 比率を保つ */
+/* 3等分にしたい場合 */
+/* 比率を保つ */
+/* .one-third img {
+  width: 33%;              
+  height: auto;            
   justify-content: center;
-}
+} */
 
 .one-half {
   width: 50%;
@@ -349,11 +361,11 @@ html {
     padding-inline: var(--unit-s);
 
     /* DISPLAY LOGO ON LEFT AND NAV ON RIGHT */
-    display: flex;
-    justify-content: space-between;
+    /* display: flex; */
+    /* justify-content: space-between; */
     /* align-items: center; */
-    gap: var(--unit-s);
-    flex-wrap: wrap;
+    /* gap: var(--unit-s); */
+    /* flex-wrap: wrap; */
 }
 
 /* REMOVE HEADER PADDING IF IT HAS A CONTAINER */
@@ -364,8 +376,13 @@ html {
 /* LOGO STYLING */
 .site-header .logo {
     display: flex;
+    position: absolute;
+    top: 106x;
+    left: 50%;
+    translate: -50% 0;
     align-items: center;
     gap: var(--unit-s);
+    max-width: 100px;
 }
 
 .site-header .logo svg {
@@ -389,6 +406,12 @@ html {
 }
 
 /* MAIN SITE NAV */
+.site-nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
 .site-nav ul {
     margin: 0;
     padding: 0;
@@ -513,7 +536,7 @@ section {
 
 .hero {
     background-color: var(--color-hero-background);
-    padding-block: var(--unit-3xl);
+    padding-block: var(--unit-4xl);
     padding-inline: var(--unit-s);
     background-image: url(../img/top-page.jpg);
     background-size: cover;
@@ -524,13 +547,16 @@ section {
     font-family: "Kaushan Script", cursive;
     font-weight: 400;
     font-style: normal;
+    font-size: 5em;
+    line-height: 1;
     }
 
     h2 {
     font-family: "Long Cang", cursive;
     font-weight: 400;
     font-style: normal;
-    font-size: var(--unit-2xl);    
+    font-size: var(--unit-2xl); 
+    margin: 0;   
     }
     
     h3 {
@@ -586,10 +612,10 @@ section {
 
 /* BOTTONS */
 
-.button {
+/* .button {
     background-color: var(--color-links);
     color: var(--color-black-80);
-    padding: var(--unit-s) var(--unit-m);
+  
     margin-block: var(--unit-2xs);
     display: inline-block;
     text-decoration: none;
@@ -599,11 +625,9 @@ section {
 .button:hover {
     background-color: var(--color-links-hover);
     color: var(--color-white)
-}
+} */
 
-.site-footer .button {
-    padding: 13px;
-}
+
 
 /* CARDS */
 
@@ -689,11 +713,12 @@ body > * {
     position: absolute;
     width: 100%;
     background-color: transparent;
-    border: 1px solid red;
+    /* display: flex;
+    justify-content: ; */
 }
 
 .site-header.on-top-of-hero + .site-main .hero {
-    padding-block-start: calc(var(--unit-3xl) + var(--unit-xl));
+    padding-block-start: calc(var(--unit-4xl) + var(--unit-xl));
 }
 
 /* CUSTOM HERO STYLING */
@@ -862,8 +887,8 @@ section:has(.observe-me)  {
 .speech-bubble {
     /* メインの吹き出しのスタイル */
     position: relative; /* 疑似要素の基準位置 */
-    width: 300px;
-    padding: 20px;
+    width: max(35%, 300px);
+    padding: 60px;
     border-radius: 60px; /* 角丸 */
     background-color: var(--color-green); /* 白い背景 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影 */
@@ -871,13 +896,19 @@ section:has(.observe-me)  {
     word-wrap: break-word;
     line-height: 1.5;
     /* この例の位置は固定値です。配置したい場所に合わせて調整してください */
-    margin: 50px 0 0 50px; 
+    margin: 50px 0 0 0px; 
 }
 
 .speech-bubble.top-right {
-margin-left: auto;   /* 左側のマージンを自動的に最大まで広げる */
+    margin-left: auto;   /* 左側のマージンを自動的に最大まで広げる */
     margin-right: 0;
 }
+
+.speech-bubble.top-left {
+    margin-left: 20%;   /* 左側のマージンを自動的に最大まで広げる */
+    margin-right: 0;
+}
+
 
 .speech-bubble::before {
     content: '';
@@ -918,87 +949,216 @@ margin-left: auto;   /* 左側のマージンを自動的に最大まで広げ�
 
 #tea-bar-zen .vertical-text {
   position: absolute;
-  left: 0;      /* 左端に寄せる */
   transform-origin: left bottom; /* 回転の基準点を調整 */
   color: var(--color-white);
 }
 
 /* MENU */
-.row {
+
+/* 画像の間に余白 */
+/* .row {
   display: flex;
   justify-content: space-between;
-  gap: 10px; /* 画像の間に余白 */
-}
+  gap: 10px; 
+} */
 
-.one-third {
+/* .one-third {
   position: relative;
   width: 33.3%;
   overflow: hidden;
-}
+} */
 
 .hover-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: opacity 0.5s ease;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* padding: 1em; */
+    text-align: center;
+    /* border: 2px solid red; */
+}
+
+.hover-image:hover img {
+    opacity: 0;
+}
+
+.hover-image.bar-menu:hover {
+    background-image: url('../img/new-bar-menu-hover.png');
+}
+
+.hover-image.macha-menu:hover {
+    background-image: url('../img/new-cha-menu-hover.png');
+}
+
+.hover-image.gelato-menu:hover {
+    background-image: url('../img/gelato-menu-hover.png');
 }
 
 /* JSで切り替えやフェードをサポートするのでここではopacityのみ指定 */
 
 /* HOW YOU CAN FIND US */
+/* #how-you-can-find-us .container {
+    background-image: url('../img/diamond-head.v2.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    margin-left: 0; 
+    margin-right: 0;
+    height: auto;
+} */
 
 #how-you-can-find-us {
-  position: relative;
-  background: url("../img/how-you-can-find-us.png") no-repeat center center/cover;
-  color: white;
-  padding: 60px 0;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-  min-height: 400px; /* 背景を確認できるように高さを確保 */
+    background-image: url('../img/diamond-head.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding: 0;  /* 縦余白だけ */
+    height: auto;
+    display: block;
+    min-height: 900px;
 }
 
 #how-you-can-find-us .container {
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-#how-you-can-find-us::before {
-  /* 背景画像の上に少し暗いフィルターをかける（文字が読みやすくなる） */
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+    /* background-image いらない */
+    padding: 0 20px;
+    justify-content: center;
 }
 
 .overlay-content {
-  display: flex;
-  /* flex-wrap: wrap; */
-  justify-content: space-between;
-  position: relative;
-  z-index: 2; /* 背景より上に出す */
-  padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
 }
 
-.one-half {
-  flex: 1 1 45%;
-  min-width: 300px;
+.text-left {
+    flex: 1;
+    color: white;
 }
 
-.text-block h1,
-.text-block h2 {
-  margin-bottom: 10px;
+.image-right {
+    flex: 1;
+    text-align: right;
 }
 
-.text-block p {
-  margin-bottom: 30px;
-  line-height: 1.6;
+.image-right img {
+    max-width: 180px;
+    height: auto;
 }
 
-.map-block img {
+/* SITE FOOTER */
+
+/* footer {
+    width: 100%;
+    height: auto;
+}
+
+.footer-background-container {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    background-image: url('../img/footer.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay-botton {
+    position: absolute;
+    cursor: pointer;
+    width: 10%;
+    height: 20%;
+    background-size: contain;
+    background-repeat: no-repeat;
+} */
+
+footer {
+    position: relative;
+    width: 100%;
+}
+
+.footer-background-container {
+    position: relative;
+    width: 100%;
+}
+
+.footer-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 全てのボタンの共通設定（自由配置のため absolute を使う） */
+.footer-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ボタン画像をきれいに */
+.footer-content .button img {
+    width: 10vw;   /* 画面幅の15% → 小さい画面では自動で小さくなる */
+    max-width: 100px;
+    min-width: 1px;
+    height: auto;
+    transition: transform .3s ease;
+}
+
+.footer-content .button:hover img {
+    transform: scale(1.1);
+}
+
+.footer-content a:nth-child(1) {
+    position: absolute;
+    top: 65%;
+    left: 25%;
+}
+
+.footer-content a:nth-child(2) {
+    position: absolute;
+    top: 27%;
+    left: 35%;
+}
+
+.footer-content a:nth-child(3) {
+    position: absolute;
+    top: 65%;
+    left: 77%;
+}
+
+.footer-content a:nth-child(4) {
+    position: absolute;
+    top: 35%;
+    right: 3.5%;
+}
+
+.footer-content a:nth-child(5) {
+    position: absolute;
+    bottom: 24%;
+    left: 5%;
+}
+
+.clouds-container {
+  position: absolute; /* 背景として配置 */
+  top: 0;
+  left: 0;
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  height: 100%; /* セクションの縦幅に合わせる */
+  pointer-events: none; /* 雲がクリックを邪魔しない */
+  overflow: hidden;
+  z-index: 1; /* コンテンツより下に置く場合は0に調整 */
 }
 
-
+.cloud {
+  position: absolute;
+  top: 10%; /* 適当に調整 */
+  left: 20%; /* 適当に調整 */
+  width: 200px;
+  height: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transform-origin: center center;
+  transition: transform 0.2s linear, opacity 0.2s linear;
+}
