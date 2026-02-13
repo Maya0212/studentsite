@@ -1,0 +1,68 @@
+/* -----------
+
+TABLE OF CONTENTS 
+
+
+
+
+
+
+
+
+
+
+ -----------*/
+
+ /* RESET */
+ * {box-sizing: border-box;}
+ body { margin: 0;}
+
+ /* RESPONSIVE IMAGES */
+ img {
+    max-width: 100%;
+    height: auto;
+ }
+
+ /* SITE STURCTURE */
+ header {
+    background-color: yellow;
+    padding: 1em;
+    display: flex;
+    gap: 1em;
+ }
+
+ .logo h1 {
+    margin: 0;
+ }
+
+ /* TOP NAV */
+ .site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+ }
+
+ main {
+    /* background-color: pink; */
+ }
+
+ footer {
+    /* background-color: cyan; */
+    padding: 1em;
+ }
+
+
+ .social-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+ }
+
+ .hero {
+    padding: 6em 1em;
+    background-color: aquamarine;
+ }
+
+ section {
+
+ }
